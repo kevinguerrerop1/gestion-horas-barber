@@ -7,12 +7,12 @@ const HORAS_LABORALES = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '
 
 export default function Home() {
   const [barberos, setBarberos] = useState<any[]>([])
-  const [servicios, setServicios] = useState([])
+  const [servicios, setServicios] = useState<any[]>([]);
   
   const [barberoSel, setBarberoSel] = useState('')
-  const [servicioSel, setServicioSel] = useState(null)
+  const [servicioSel, setServicioSel] = useState<any>(null)
   const [fecha, setFecha] = useState('')
-  const [horasDisponibles, setHorasDisponibles] = useState([])
+  const [horasDisponibles, setHorasDisponibles] = useState<string[]>([]);
   const [horaSel, setHoraSel] = useState('')
   const [nombre, setNombre] = useState('')
   const [correo, setCorreo] = useState('')
@@ -53,7 +53,7 @@ export default function Home() {
     cargarDisponibilidad()
   }, [fecha, barberoSel])
 
-  const handleReservar = async (e) => {
+  const handleReservar = async (e: React.FormEvent) => {
     e.preventDefault()
     setMensaje('')
 
