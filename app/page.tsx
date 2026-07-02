@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase'
 const HORAS_LABORALES = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00']
 
 export default function Home() {
-  const [barberos, setBarberos] = useState([])
+  const [barberos, setBarberos] = useState<any[]>([])
   const [servicios, setServicios] = useState([])
   
   const [barberoSel, setBarberoSel] = useState('')
